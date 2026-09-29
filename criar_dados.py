@@ -3,7 +3,7 @@ import numpy as np
 
 np.random.seed(42)
 
-# --- 1. GERAÇÃO DO ARQUIVO: transacoes.csv ---
+# transacoes.csv
 datas_transacoes = pd.date_range(start='2026-09-01', periods=1000, freq='h')
 
 df_transacoes = pd.DataFrame({
@@ -23,7 +23,7 @@ df_transacoes = pd.concat([df_transacoes, df_transacoes.iloc[:15]], ignore_index
 df_transacoes.to_csv('transacoes.csv', index=False, encoding='latin1')
 
 
-# 2. GERAÇÃO DO ARQUIVO: cotacoes.csv ---
+# cotacoes.csv 
 datas_cotacoes = pd.date_range(start='2026-09-01', end='2026-10-01', freq='D')
 
 variacoes = np.random.normal(loc=0.001, scale=0.015, size=len(datas_cotacoes))
